@@ -124,6 +124,8 @@ const RenderBars = (props: Props) => {
       : item.barMarginBottom || props.barMarginBottom || 0;
 
   const renderLabel = (label: String, labelTextStyle: any, value: number) => {
+    let key = 'key' +  Math.floor(Math.random() * 55) + 1;
+
     return (
       <View
         style={[
@@ -163,6 +165,7 @@ const RenderBars = (props: Props) => {
           item.labelComponent()
         ) : (
           <Text
+            key={label + key}
             style={[
               {textAlign: 'center'},
               rtl && {transform: [{rotate: '180deg'}]},
@@ -181,6 +184,8 @@ const RenderBars = (props: Props) => {
     labelTextStyle: any,
     value: number,
   ) => {
+    let key = 'key' +  Math.floor(Math.random() * 55) + 1;
+
     return (
       <Animated.View
         style={[
@@ -209,6 +214,7 @@ const RenderBars = (props: Props) => {
           item.labelComponent()
         ) : (
           <Text
+            key={label + key}
             style={[
               {textAlign: 'center'},
               rtl && {transform: [{rotate: '180deg'}]},
